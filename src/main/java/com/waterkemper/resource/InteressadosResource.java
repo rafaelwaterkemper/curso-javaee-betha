@@ -12,7 +12,7 @@ import javax.ws.rs.core.Response;
 @Path("/interessados")
 public class InteressadosResource {
 
-    @Inject
+//    @Inject
     private InteressadoService service;
 
     @GET
