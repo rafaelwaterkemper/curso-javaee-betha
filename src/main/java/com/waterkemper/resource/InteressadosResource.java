@@ -6,18 +6,19 @@ import com.waterkemper.model.InteressadoService;
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
+import java.util.Collections;
 
 @Produces({"application/json"})
 @Consumes("application/json")
 @Path("/interessados")
 public class InteressadosResource {
 
-//    @Inject
+    @Inject
     private InteressadoService service;
 
     @GET
-    public String sayHello() {
-        return "<h1>Learning JAX-RS</h1>";
+    public Response sayHello() {
+        return Response.ok(Collections.singletonMap("STATUS", "OK")).build();
     }
 
     @POST
