@@ -5,8 +5,10 @@ import com.waterkemper.util.AbstractyEntityBuilder;
 import javax.persistence.*;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
-@Entity(name = "INTERESSADOS")
+@Entity
+@Table(name = "INTERESSADOS")
 public class Interessado {
 
     @Id
@@ -15,15 +17,15 @@ public class Interessado {
 
     @NotNull
     @Column(name = "NOME")
-    @Max(value = 100)
+    @Size(max = 100)
     private String nome;
 
     @NotNull
     @Column(name = "EMAIL")
-    @Max(value = 100, message = "Limite máximo e {max}")
+    @Size(max = 100, message = "Limite máximo e {max}")
     private String email;
 
-    private Interessado() {
+    protected Interessado() {
     }
 
     public String getNome() {
@@ -34,22 +36,22 @@ public class Interessado {
         return email;
     }
 
-    public static class Builder extends AbstractyEntityBuilder<Interessado, Builder>{
+    public static class Builder extends AbstractyEntityBuilder<Interessado, Builder> {
 
         private Builder(Interessado interessado) {
             super(interessado);
         }
 
-        public static Builder create(){
+        public static Builder create() {
             return new Builder(new Interessado());
         }
 
-        public Builder nome(String nome){
+        public Builder nome(String nome) {
             entity.nome = nome;
             return this;
         }
 
-        public Builder email(String email){
+        public Builder email(String email) {
             entity.email = email;
             return this;
         }
