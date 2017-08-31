@@ -1,3 +1,6 @@
+<!--Adicionar este datasource ao standalone.xml do wildfly após configurar
+o módulo do postegres-->
+
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
     JBoss, Home of Professional Open Source
@@ -22,7 +25,7 @@
              xsi:schemaLocation="http://www.jboss.org/ironjacamar/schema http://docs.jboss.org/ironjacamar/schema/datasources_1_0.xsd">
     <!-- The datasource is bound into JNDI at this location. We reference
        this in META-INF/persistence.xml -->
-    <datasource jndi-name="java:jboss/datasources/landpageDS" pool-name="landPage"
+    <datasource jndi-name="java:jboss/datasources/landPageDS" pool-name="landPageDS"
                 enabled="true" use-java-context="true">
         <connection-url>jdbc:postgresql://localhost:5432/rafael.waterkempercurso</connection-url>
         <driver>org.postgresql</driver>

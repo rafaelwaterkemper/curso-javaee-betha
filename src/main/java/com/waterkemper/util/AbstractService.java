@@ -23,12 +23,8 @@ public abstract class AbstractService<T> {
         em.remove(t);
     }
 
-
     public List<Interessado> list(){
         return em.createQuery("from Interessado", Interessado.class).getResultList();
     }
-
-
-
 
 }
